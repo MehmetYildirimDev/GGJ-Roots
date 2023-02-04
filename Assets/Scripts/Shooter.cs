@@ -45,7 +45,7 @@ public class Shooter : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             if (index <= projectile.Count - 1)
-                index --;
+                index = projectile.Count -1;
             else
                 index--;
         }
