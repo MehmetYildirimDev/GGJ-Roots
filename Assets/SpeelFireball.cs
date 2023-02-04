@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class SpeelFireball : MonoBehaviour
 {
-    public float Damage = 10f;
+    public float Damage = 20f;
     public GameObject impactVFX;
     private bool collided;
+
+
 
     private void Start()
     {

@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5182383880153159258, guid: 96985283140a2204a81be6052e0badeb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5182383880153159263, guid: 96985283140a2204a81be6052e0badeb, type: 3}
       propertyPath: near clip plane
       value: 0.01
@@ -917,7 +921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925170627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.542, z: -0.028}
+  m_LocalPosition: {x: -0, y: 0.542, z: 0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 645608230579115419}
@@ -5727,6 +5731,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!82 &1972854161 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5182383880050868747, guid: 96985283140a2204a81be6052e0badeb, type: 3}
+  m_PrefabInstance: {fileID: 259363751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &269787096251420449
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5748,7 @@ GameObject:
   - component: {fileID: 4565087438320671294}
   - component: {fileID: 1783009422371679988}
   - component: {fileID: 269787096251420450}
+  - component: {fileID: 269787096251420451}
   m_Layer: 0
   m_Name: Wand
   m_TagString: Untagged
@@ -5760,12 +5770,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 259363753}
   projectile:
-  - {fileID: 281301843873919595, guid: 099c7aaa8c776494ca9a9728ab89471a, type: 3}
   - {fileID: 4895890796922159955, guid: 5cfe716e810254346aeae6756541a538, type: 3}
+  - {fileID: 281301843873919595, guid: 099c7aaa8c776494ca9a9728ab89471a, type: 3}
+  - {fileID: 3490815368089667915, guid: ce77a94cdc1bd444b844eecfe4949194, type: 3}
   FirePoint: {fileID: 1925170628}
-  projectileSpeed: 30
-  FireRate: 4
+  FireRate: 2
   arcRange: 1
+  audioSource: {fileID: 1972854161}
+  ShootClip:
+  - {fileID: 8300000, guid: 0806f1d38dda76e4da3b34dfe0191e8b, type: 3}
+  - {fileID: 8300000, guid: daebe0794a9699c4bbea706d1d5f4e25, type: 3}
+--- !u!95 &269787096251420451
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269787096251420449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 401e82fc8a51d97469cced2fa9ee596e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &645608230579115419
 Transform:
   m_ObjectHideFlags: 0

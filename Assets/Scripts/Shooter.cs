@@ -9,14 +9,18 @@ public class Shooter : MonoBehaviour
     private Vector3 destination;
     public List<GameObject> projectile;
     public Transform FirePoint;
-    public float projectileSpeed = 30f;
+    private float MultiplierfireballSpeed = 1.5f;
     public float FireRate = 4f;
     private float timetoFire;
     public float arcRange = 1;
     private int index;
+    private Animator animator;
+    public AudioSource audioSource;
+    public AudioClip[] ShootClip;
     void Start()
     {
         index = 0;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,7 +29,9 @@ public class Shooter : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time >= timetoFire)
         {
             timetoFire = Time.time + 1 / FireRate;
+            animator.SetTrigger("Shoot");
             ShootProjectile();
+            audioSource.PlayOneShot(ShootClip[UnityEngine.Random.Range(0, ShootClip.Length)]);
         }
 
 
@@ -37,7 +43,7 @@ public class Shooter : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (index >=projectile.Count - 1)
+            if (index >= projectile.Count - 1)
                 index = 0;
             else
                 index++;
@@ -45,7 +51,7 @@ public class Shooter : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             if (index <= projectile.Count - 1)
-                index = projectile.Count -1;
+                index = projectile.Count - 1;
             else
                 index--;
         }
@@ -70,6 +76,11 @@ public class Shooter : MonoBehaviour
     private void InstantiateProjectile(Transform firePoint)
     {
         var projectileObj = Instantiate(projectile[index], firePoint.position, Quaternion.identity) as GameObject;
+            float projectileSpeed = 30f;
+
+        //if (index == 0) projectileSpeed /= MultiplierfireballSpeed;
+        if (index == 1) projectileSpeed /= MultiplierfireballSpeed;
+
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
 
         iTween.PunchPosition(projectileObj, new Vector3(
