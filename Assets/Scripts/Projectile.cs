@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float Damage = 10f;
+    public int Damage = 10;
     public GameObject impactVFX;
     private bool collided;
 
@@ -14,6 +14,21 @@ public class Projectile : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+
+        if (collision.gameObject.tag == "boss" && !collided)
+        {
+            Debug.Log("boss carpisma");
+            collided = true;
+
+            collision.gameObject.transform.root.GetComponent<EnemyBoss>().onDamage(Damage);
+
+            var impact = Instantiate(impactVFX, collision.contacts[0].point, Quaternion.identity) as GameObject;
+
+            Destroy(impact, 2f);
+
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.tag != "Bullet" && collision.gameObject.tag != "Player" && !collided)
         {
             collided = true;

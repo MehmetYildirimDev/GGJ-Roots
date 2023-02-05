@@ -7,7 +7,7 @@ public class EnemyBoss : MonoBehaviour
 {
 
     public bool isDead = false;
-    public int currentHealt = 3;
+    public int currentHealt = 250;
     private int Healt;
 
     public Transform target;
@@ -35,6 +35,8 @@ public class EnemyBoss : MonoBehaviour
     public AudioClip takeDamageSfx;
     public AudioClip[] ZombieSounds;
 
+
+
     private void Start()
     {
         Healt = currentHealt;
@@ -47,6 +49,7 @@ public class EnemyBoss : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(Healt.ToString());
         if (!isDead)
         {
             if (useFootSteps)
@@ -115,39 +118,15 @@ public class EnemyBoss : MonoBehaviour
     public void HandlesetDistance()
     {
         Distance = Vector3.Distance(transform.position, target.position);
+        animator.SetFloat("Distance", Distance);
 
         if ((Distance <= lookRadius || Healt != currentHealt)) //hasar aldiginda da gelmesi gerek
         {
-            //  Agent.isStopped = false;
-            animator.SetBool("near", true);
 
             Agent.SetDestination(target.position);
 
             FaceTarget();
         }
-        else
-        {
-            animator.SetBool("near", false);
-
-            //      Agent.isStopped = true;
-        }
-
-        animator.SetFloat("isStop", Distance);
-        //if (distance <= Agent.stoppingDistance)
-        //{
-        //    FaceTarget();
-        //}
-
-        if (Distance < 2)
-        {
-            Agent.isStopped = true;
-        }
-        else if (Distance > 2 && !isDead)
-        {
-            Agent.isStopped = false;
-        }
-
-
 
     }
 
@@ -194,9 +173,10 @@ public class EnemyBoss : MonoBehaviour
         Healt -= damageAmount;
         if (Healt <= 0)//isdead
         {
-
+            // animator.Play("Monster_anim|Death");
+            animator.SetBool("isDead", true);
             isDead = true;
-            animator.enabled = false;
+            //animator.enabled = false;
             Agent.speed = 0f;
             //MainAudioSource.Stop();
             Destroy(this.gameObject, 8f);
@@ -217,5 +197,31 @@ public class EnemyBoss : MonoBehaviour
         FirstPersonController.instance.ZombieTakeDamage = false;
     }
     */
+
+    public void Freeze(int second)
+    {
+        StartCoroutine(IFreeze(second));
+    }
+
+    IEnumerator IFreeze(int second)
+    {
+        animator.enabled = false;
+        Agent.isStopped = true;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+        yield return new WaitForSeconds(second);
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        animator.enabled = true;
+        Agent.isStopped = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("carpisma");
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            int rand = Random.Range(1, 3);
+            animator.Play("Monster_anim|Get_hit" + rand);
+        }
+    }
 }
 
