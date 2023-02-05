@@ -7,9 +7,13 @@ using System;
 
 public class UIScript : MonoBehaviour
 {
-
     [SerializeField] private Text HealtText = default;
     [SerializeField] private Text StaminaText = default;
+    [SerializeField] private Text clipText = default;
+    [SerializeField] private Text TotalAmmoText = default;
+
+
+
 
     private void OnEnable()
     {
@@ -17,6 +21,9 @@ public class UIScript : MonoBehaviour
         FirstPersonController.onHeal += UpdateHealt;
         FirstPersonController.onStaminaChange += UpdateStamina;
     }
+
+
+
     private void OnDisable()
     {
         FirstPersonController.onDamage -= UpdateHealt;
@@ -28,15 +35,23 @@ public class UIScript : MonoBehaviour
     {
         UpdateHealt(100);
         UpdateStamina(100);
+        UpdateTotalAmmo(90);//BURAYA DÝKKAT
     }
 
     private void UpdateHealt(float currentHealt)
     {
         HealtText.text = currentHealt.ToString("00");
+
     }
 
     private void UpdateStamina(float currentStamina)
     {
         StaminaText.text = currentStamina.ToString("00");
+    }
+
+
+    private void UpdateTotalAmmo(float TotalAmmo)
+    {
+        TotalAmmoText.text = TotalAmmo.ToString("00");
     }
 }
