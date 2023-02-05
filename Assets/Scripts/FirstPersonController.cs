@@ -5,6 +5,8 @@ using System;
 
 public class FirstPersonController : MonoBehaviour
 {
+
+    public bool PlayerisDead = false;
     public bool canMove { get; private set; } = true;
     private bool isSprinting => canSprint && Input.GetKey(SprintKey) && !isCrouching;
     // !isCrouching bunu ben ekledim hata olursa bak
@@ -111,6 +113,7 @@ public class FirstPersonController : MonoBehaviour
 
 
 
+
     //SLÝDÝNG PARAMETERS ///editorde degistirilecek bir sey olmadýgýndan boyle yaptýk
     private Vector3 hitPontNormal;//ustunde bulundugumuz yuzey
 
@@ -177,7 +180,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
+        if (canMove && !PlayerisDead)
         {
             HandleMovementInput();
             HandleMouseLook();
@@ -522,5 +525,6 @@ public class FirstPersonController : MonoBehaviour
 
         regenratingStamina = null;
     }
+
 
 }
