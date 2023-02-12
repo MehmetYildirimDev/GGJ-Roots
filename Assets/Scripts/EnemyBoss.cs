@@ -36,7 +36,7 @@ public class EnemyBoss : MonoBehaviour
     public AudioClip[] ZombieSounds;
 
 
-
+    public MainSceneManager sceneManager;
     private void Start()
     {
         Healt = currentHealt;
@@ -179,10 +179,16 @@ public class EnemyBoss : MonoBehaviour
             //animator.enabled = false;
             Agent.speed = 0f;
             //MainAudioSource.Stop();
-            Destroy(this.gameObject, 8f);
-
+            Destroy(this.gameObject,3f);
+            StartCoroutine(WinSCene());  
         }
         Agent.isStopped = false;
+    }
+
+    IEnumerator WinSCene()
+    {
+        yield return new WaitForSeconds(2f);
+        sceneManager.Win();
     }
 
     //animasyonda vuruyorsa burayi cagiriyo ve eger hasar al dogruysa(o da kolu degdiyse true oluyo) hasar verito ve surekli hasar alma olayini cozyuoruz

@@ -176,6 +176,7 @@ public class FirstPersonController : MonoBehaviour
         currentHealt = maxHealt;
         currentStamina = MaxStamina;
         Cursor.visible = false;
+        Panel.SetActive(false);
     }
 
     private void Update()
@@ -375,6 +376,7 @@ public class FirstPersonController : MonoBehaviour
             StopCoroutine(RegenerateHealth());
 
         print("Dead");
+        sceneManager.GameOver();
     }
 
     private void HandleStamina()
@@ -526,5 +528,25 @@ public class FirstPersonController : MonoBehaviour
         regenratingStamina = null;
     }
 
+    public GameObject Panel;
+    public AudioClip giveHit;
+    public MainSceneManager sceneManager;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "BossHand")
+        {
+            Debug.Log("vurdu");
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "BossHand")
+        {
+            Debug.Log("vurdu");
+            Panel.SetActive(true);
+            audioSource.PlayOneShot(giveHit);
+            ApplyDamage(25);
+        }
+    }
 }

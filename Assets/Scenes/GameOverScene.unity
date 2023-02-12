@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,14 +362,14 @@ RectTransform:
   m_GameObject: {fileID: 875894034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1625, y: 1.1375, z: 1}
+  m_LocalScale: {x: 1.0031635, y: 0.98159015, z: 0.8629364}
   m_Children: []
   m_Father: {fileID: 754180851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: -30}
+  m_AnchoredPosition: {x: 0, y: 6}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875894036
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 32e3d3b2ae336a549865af1b581adca5, type: 3}
+  m_Texture: {fileID: 2800000, guid: f11c9bd3d41dcbf4ca65008209b72587, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: -4}
+  m_AnchoredPosition: {x: -23, y: -244}
   m_SizeDelta: {x: 807.8236, y: 205.2442}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078055973
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355560, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -141
+      value: -381
       objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355560, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -141
+      value: -381
       objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

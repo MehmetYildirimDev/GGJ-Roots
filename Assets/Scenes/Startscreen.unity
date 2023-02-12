@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,17 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &573855324 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7157072450098530526, guid: 2e8999f79973c2744a70e9370028ac82, type: 3}
-  m_PrefabInstance: {fileID: 7157072449529437826}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e4acc00233ea746970a3db22d73e58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &645413063 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
@@ -256,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: 118}
+  m_AnchoredPosition: {x: 628, y: 414}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795667575
@@ -279,7 +268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ZEH\u0130RL\u0130 K\xD6KLER"
+  m_text: TOXIC ROOTS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -516,7 +505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ccebc50c91ec7c64e81aaaf468347861, type: 3}
+  m_Texture: {fileID: 2800000, guid: db84326bfcbb8f949a27f0bd0a698b3a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -705,7 +694,15 @@ PrefabInstance:
     - target: {fileID: 5934228400217742900, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 573855324}
+      objectReference: {fileID: 7157072449529437828}
+    - target: {fileID: 5934228400217742900, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934228400217742900, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742906, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_Name
       value: Quit
@@ -776,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -147
+      value: -441
       objectReference: {fileID: 0}
     - target: {fileID: 5934228400217742907, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -794,6 +791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5934228402153526617, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
+      propertyPath: m_Text
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de587f22002f5d4419230e0b2013dae2, type: 3}
 --- !u!1001 &6409825219853393770
@@ -803,6 +804,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 954909840}
     m_Modifications:
+    - target: {fileID: 6409825220400731394, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
+      propertyPath: m_Text
+      value: PLAY
+      objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355560, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -873,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355560, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -285
       objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355560, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -890,7 +895,15 @@ PrefabInstance:
     - target: {fileID: 6409825221209355561, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 573855324}
+      objectReference: {fileID: 7157072449529437828}
+    - target: {fileID: 6409825221209355561, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409825221209355561, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6409825221209355563, guid: d6daa88d93830ef418eb3e387f90ce79, type: 3}
       propertyPath: m_Name
       value: Play
@@ -952,5 +965,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7157072450098530526, guid: 2e8999f79973c2744a70e9370028ac82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e8999f79973c2744a70e9370028ac82, type: 3}
+--- !u!1 &7157072449529437827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7157072450098530521, guid: 2e8999f79973c2744a70e9370028ac82, type: 3}
+  m_PrefabInstance: {fileID: 7157072449529437826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7157072449529437828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157072449529437827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35e0cbdfe7bd454ca36245dbfc30f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

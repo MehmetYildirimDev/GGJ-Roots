@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu2Scripts1 : MonoBehaviour
+public class WinScreen : MonoBehaviour
 {
     private void Start()
     {
@@ -12,11 +12,12 @@ public class Menu2Scripts1 : MonoBehaviour
     }
     public void PlayButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitButton()
     {
         Application.Quit();
     }
+
 }

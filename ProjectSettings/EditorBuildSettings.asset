@@ -6,14 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/MainScene.unity
-    guid: ddaac86af084a4c43ac1f3bb85ad3ce1
-=======
-    path: Assets/Scenes/Start0screen.unity
+    path: Assets/Scenes/Startscreen.unity
     guid: 14a1c913fa9af8645af051b47bb242b2
   - enabled: 1
-    path: Assets/Scenes/StartScene.unity
+    path: Assets/Scenes/EntryScene.unity
     guid: 6f8cc9ba9ef2d76418dedfa2889a69ba
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
@@ -24,5 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 64d6f59a4e65939499f63af3223d9010
->>>>>>> 51b106812a43a1f11df3a045d70342d43d7e46b0
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/EnemyTestScene.unity
+    guid: 975c388e9598faf4f9dacbdff01cbd9a
   m_configObjects: {}

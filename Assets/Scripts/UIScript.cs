@@ -9,10 +9,6 @@ public class UIScript : MonoBehaviour
 {
     [SerializeField] private Text HealtText = default;
     [SerializeField] private Text StaminaText = default;
-    [SerializeField] private Text clipText = default;
-    [SerializeField] private Text TotalAmmoText = default;
-
-
 
 
     private void OnEnable()
@@ -35,7 +31,6 @@ public class UIScript : MonoBehaviour
     {
         UpdateHealt(100);
         UpdateStamina(100);
-        UpdateTotalAmmo(90);//BURAYA DÝKKAT
     }
 
     private void UpdateHealt(float currentHealt)
@@ -49,9 +44,4 @@ public class UIScript : MonoBehaviour
         StaminaText.text = currentStamina.ToString("00");
     }
 
-
-    private void UpdateTotalAmmo(float TotalAmmo)
-    {
-        TotalAmmoText.text = TotalAmmo.ToString("00");
-    }
 }
